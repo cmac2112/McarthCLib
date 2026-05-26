@@ -48,5 +48,6 @@ if(ll->head == NULL){
   ll->tail->next = new;
   ll->tail = new;
 }
-ll->len++;
-return LL_ERR_OK;
+  ll->len++;
+  return LL_ERR_OK;
+}
