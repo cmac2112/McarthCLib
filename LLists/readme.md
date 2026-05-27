@@ -1,0 +1,1 @@
+gcc -Werror -Wall -o Usage LL/LinkedList.c LL/AddAndPrint.c 2>&1
