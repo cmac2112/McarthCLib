@@ -2,6 +2,8 @@
 #include <string.h>
 #include "LinkedList.h"
 
+#include <stdio.h>
+
 const char *ll_get_err_str(const ll_error_e err) {
     switch (err) {
         case LL_ERR_OK: return "OK";
@@ -106,8 +108,19 @@ void ll_init(ll_t *const ll, bool byom,
     ll->byom = byom;
     ll->len = 0;
     ll->d_size = d_size;
-    ll->match = match;
+    if (match != NULL) {
+        ll->match = match;
+    }
 
     ll->head = NULL;
     ll->tail = NULL;
+}
+
+void ll_print_all_vals(ll_t *const ll) {
+    int pos = 0;
+    while (ll->head != NULL) {
+        printf("pos %d: val: %d\n", pos, *(int *)ll->head->data);
+        ll->head = ll->head->next;
+        pos += 1;
+    }
 }

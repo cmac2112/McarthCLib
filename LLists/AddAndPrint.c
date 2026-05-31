@@ -8,15 +8,6 @@ bool Search(void *const val1, void *const val2) {
     return *(int *)val1 == *(int *)val2;
 }
 
-void PrintAllValues(ll_t *const ll) {
-    int pos = 0;
-    while (ll->head != NULL) {
-        printf("pos %d: val: %d\n", pos, *(int *)ll->head->data);
-        ll->head = ll->head->next;
-        pos += 1;
-    }
-}
-
 int main() {
     ll_t ll;
     ll_error_e ll_err;
@@ -33,7 +24,7 @@ int main() {
     }
 
     /* print all the values */
-    PrintAllValues(&ll);
+    ll_print_all_vals(&ll);
 
     /* free all, continue to next example */
     ll_destroy(&ll);
@@ -78,9 +69,12 @@ if ((ll_err = ll_remove(&sll, &vals[3]) == LL_ERR_NOT_FOUND)){
     printf("failed to remove %d\n", vals[3]);
     return 1;
 }else {
-    printf("value removed succesfully \n");
-    PrintAllValues(&sll);
+    printf("value removed successfully \n");
+    ll_print_all_vals(&sll);
 }
+
+    //free all memory on program conclusion
+    ll_destroy(&sll);
     return 0;
 }
 
