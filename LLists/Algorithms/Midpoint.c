@@ -7,6 +7,10 @@ ll_t initalizeExampleLL(int *const vals, int size) {
     ll_t ll;
     ll_error_e ll_err;
 
+
+    //create our ll struct
+    //we pass the memory address of our uninitialized ll here so ll_init modifies it rather than making a copy
+    
     ll_init(&ll, true, sizeof(int), NULL);
 
     //add 10 digits of fib sequence to the ll
@@ -28,6 +32,8 @@ int main() {
 
     int arr[] = {0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55};
 
+    //when passing an array to a function, we are really just passing a pointer to its first element
+    // this is why we need the size argument here of the typeof items divided by the size of the array to determine how long we should iterate inside of this function
     ll_t ll = initalizeExampleLL(arr, sizeof(arr) / sizeof(int));
 
     //create our fast pointer and regular pointer
