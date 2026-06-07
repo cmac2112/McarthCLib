@@ -45,7 +45,7 @@ const char *ll_get_err_str(const ll_error_e err);
 void *ll_search(ll_t *const ll, void *const data);
 ll_error_e ll_insert(ll_t *const ll, void *const data);
 ll_error_e ll_remove(ll_t *const ll, void *const data);
-void ll_print_all_vals(ll_t *const ll);
+void ll_print_all_vals(const ll_t *const ll);
 
 //searches the list at the given index
 void *ll_retrive_node_at(ll_t *const ll, int index);
