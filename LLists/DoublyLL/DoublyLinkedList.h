@@ -1,14 +1,12 @@
 #pragma once
-#include <stddef.h>
-#include <stdinit.h>
 #include <stdbool.h>
 
 /* define basic error types */
 typedef enum{
-  LL_ERR_OK,
-  LL_ERR_NOT_FOUND,
-  LL_ERR_ENTRY_ALLOC,
-  LL_ERR_DATA_ALLOC,
+  DLL_ERR_OK,
+  DLL_ERR_NOT_FOUND,
+  DLL_ERR_ENTRY_ALLOC,
+  DLL_ERR_DATA_ALLOC,
 } dll_error_e;
 
 /*structure of a given node */
@@ -38,7 +36,11 @@ const char *dll_get_err_str(const dll_error_e err);
 
 void *dll_search(dll_t *const dll, void *const data);
 dll_error_e dll_insert(dll_t *const dll, void *const data);
+
+//removes a given node
+dll_error_e dll_remove(dll_t *const dll, void *const data);
+
 // inserts after a given node
-dll_error_e dll_insert_after(dll_t *const dll, void *const data, dll_node *const dll_n);
+dll_error_e dll_insert_after(dll_t *const dll, void *const data);
 //inserts at a given index 
 dll_error_e dll_insert_at(dll_t *const dll, void *const data, int pos);

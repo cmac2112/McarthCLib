@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "LinkedList.h"
+#include "LL/LinkedList.h"
 /*adds integers to a ll and prints them sequentially */
 /* this ll supports generic types but ints will do for now */
 bool Search(void *const val1, void *const val2) {

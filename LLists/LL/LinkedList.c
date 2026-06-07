@@ -118,9 +118,12 @@ void ll_init(ll_t *const ll, bool byom,
 
 void ll_print_all_vals(ll_t *const ll) {
     int pos = 0;
-    while (ll->head != NULL) {
-        printf("pos %d: val: %d\n", pos, *(int *)ll->head->data);
-        ll->head = ll->head->next;
+    //initialize a local pointer
+    struct ll_node *n = ll->head;
+
+    while (n != NULL) {
+        printf("pos %d: val: %d\n", pos, *(int *)n->data);
+        n = n->next;
         pos += 1;
     }
 }
